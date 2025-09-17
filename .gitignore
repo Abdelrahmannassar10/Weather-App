@@ -41,9 +41,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/ios
-/assets
-/linux
-/macos
-/web
-/windows
+/ios/
+assets/
+linux/
+macos/
+web/
+windows/
