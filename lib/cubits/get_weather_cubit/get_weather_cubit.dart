@@ -11,15 +11,16 @@ class GetWeatherCubit extends Cubit<WeatherState> {
 
   Future<void> getWeather({required String cityName}) async {
     try {
-      emit(WeatherLoadedState(weatherModel: weatherModel!));
-      print("Fetching weather for city: $cityName");
+      print("Fetching weather for: $cityName");
 
-      weatherModel = await WeatherService(dio: Dio())
+      final result = await WeatherService(dio: Dio())
           .getCurrentWeather(cityName: cityName);
 
-      if (weatherModel != null) {
+      if (result != null) {
+        weatherModel = result;
         emit(WeatherLoadedState(weatherModel: weatherModel!));
       } else {
+        print("WeatherService returned null!");
         emit(WeatherFailureState());
       }
     } catch (e, stacktrace) {
@@ -29,4 +30,3 @@ class GetWeatherCubit extends Cubit<WeatherState> {
     }
   }
 }
-
