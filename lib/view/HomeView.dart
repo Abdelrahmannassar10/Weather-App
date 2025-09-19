@@ -18,7 +18,7 @@ class Homeview extends StatelessWidget {
 
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: getThemeColor(weatherModel?.weatherCondition)[500],
+            backgroundColor: getThemeColor(weatherModel?.weatherCondition)[500]?? Colors.blue, // fallback color
             title: const Text("Weather App"),
             actions: [
               IconButton(

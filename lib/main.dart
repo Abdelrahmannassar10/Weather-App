@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:weather_app_nassar/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app_nassar/cubits/get_weather_cubit/get_weather_states.dart';
 import 'package:weather_app_nassar/view/HomeView.dart';
 
-void main() async {
-  await dotenv.load(fileName: ".env");
+void main() {
   runApp(const WeatherApp());
 }
 

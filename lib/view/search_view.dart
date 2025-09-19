@@ -16,7 +16,7 @@ class SearchView extends StatelessWidget {
             backgroundColor: getThemeColor(
                 BlocProvider.of<GetWeatherCubit>(context)
                     .weatherModel
-                    ?.weatherCondition)[500],
+                    ?.weatherCondition)[500]?? Colors.blue,
           ),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
